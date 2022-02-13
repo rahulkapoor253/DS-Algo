@@ -15,7 +15,7 @@ void computeNextPermutation(int arr[], int n) {
 		if (i == n - 1) {
 			i--;
 		}
-		else if (arr[i] > arr[i + 1]) {
+		else if (arr[i] >= arr[i + 1]) {
 			i--;
 		}
 		else if (arr[i] < arr[i + 1]) {
@@ -33,9 +33,6 @@ void computeNextPermutation(int arr[], int n) {
 
 		if (isExit) {
 			break;
-		}
-		else {
-			i--;
 		}
 
 	}
