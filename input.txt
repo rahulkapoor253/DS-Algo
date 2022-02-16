@@ -1,8 +1,1 @@
-7
-a
-c
-d
-b
-b
-c
-a
+Able was I, ere I saw Elba!
