@@ -11,25 +11,37 @@ int main() {
 	string str;
 	getline(cin, str);
 
-	reverse(str.begin(), str.end());
-
-	int start = 0, end = 0;
 	int len = str.length();
+	string res = "";
 
-	while (end < len) {
+	int start = 0;
+	int end = len - 1;
 
-		if (str[end] == ' ') {
-			reverse(str.begin() + start, str.begin() + end);
-			start = end + 1;
+	while (start >= 0 && end >= 0) {
+
+		while (end >= 0 && str[end] == ' ') {
+			end--;
 		}
 
-		end++;
+		start = end;
+
+		while (start >= 0 && str[start] != ' ') {
+			start--;
+		}
+
+
+		string val =  str.substr(start + 1, end - start);
+		if (val.length() >= 1) {
+			res += val;
+			res += " ";
+		}
+
+		end = start;
 	}
 
-	//last word needs to be handled manually as there is no ending ' '
-	reverse(str.begin() + start, str.end());
+	res.pop_back();
 
-	cout << str;
+	cout << res;
 
 	return 0;
 }
