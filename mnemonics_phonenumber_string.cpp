@@ -18,7 +18,7 @@ void computeMnemonics(string str, unordered_map<int, string> umap, string res, i
 	for (int i = 0; i < temp_len; i++) {
 
 		//as we are making combination of result strings so add values to res, and move ahead in ind
-		computeMnemonics(str, umap, res += temp[i], ind + 1, n);
+		computeMnemonics(str, umap, res + temp[i], ind + 1, n);
 
 	}
 
