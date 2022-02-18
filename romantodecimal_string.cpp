@@ -27,6 +27,12 @@ int main() {
 
 	for (int i = 0; i < len; i++) {
 
+		//say if all values are >= and we reached last val it will be skipped else
+		if (i == len - 1) {
+			res += umap[str[i]];
+			break;
+		}
+
 		if ( (i + 1 < len) && (umap[str[i]] >= umap[str[i + 1]]) ) {
 			//add normally and move ahead
 			res += umap[str[i]];
