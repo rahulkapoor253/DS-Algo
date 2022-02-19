@@ -60,29 +60,14 @@ void computeMerging(Node* head1, Node* head2, Node* &head3) {
 
 	}
 
-	if (ptr1 == NULL) {
+	if (ptr1 == NULL && ptr2 != NULL) {
 		//traverse the remaining ptr2
-		while (ptr2 != NULL) {
-			Node* new_node = new Node();
-			new_node->next = NULL;
-			new_node->data = ptr2->data;
-			ptr3->next = new_node;
-
-			ptr2 = ptr2->next;
-		}
-
+		ptr3->next = ptr2;
 	}
 
-	if (ptr2 == NULL) {
+	if (ptr2 == NULL && ptr1 != NULL) {
 		//traverse remaining ptr1
-		while (ptr1 != NULL) {
-			Node* new_node = new Node();
-			new_node->next = NULL;
-			new_node->data = ptr1->data;
-			ptr3->next = new_node;
-
-			ptr1 = ptr1->next;
-		}
+		ptr3->next = ptr1;
 	}
 
 }
