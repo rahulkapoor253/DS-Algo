@@ -1,3 +1,13 @@
+printing list:
+1
+2
+4
+4
+5
+11
+11
+
+printing list in-place:
 1
 2
 4
