@@ -29,21 +29,39 @@ void pushNode(struct Node* &head, int val) {
 
 }
 
-void removeDuplicates(Node* &head) {
+void oddEvenList(Node* &head) {
 
-	Node* ptr = head;
+	if (head == NULL || head->next == NULL || head->next->next == NULL) {
+		return;
+	}
 
-	while (ptr != NULL && ptr->next != NULL) {
+	//our list can be odd or even length.
+	Node* curr_even = head->next;
+	Node* curr_odd = head;
 
-		if (ptr->data == ptr->next->data) {
+	//track first even as well
+	Node* first_even = curr_even;
 
-			Node* temp = ptr->next;
-			ptr->next = temp->next;
-			free(temp);
+	while (1) {
 
+		if (curr_even != NULL && curr_odd != NULL && curr_even->next == NULL) {
+			curr_odd->next = first_even;
+			break;
 		}
 
-		ptr = ptr->next;
+		curr_odd->next = curr_even->next;
+		curr_odd = curr_even->next;
+
+//it has to be handled first, as odd may reach the end node in case of odd length list
+		if (curr_even != NULL && curr_odd != NULL && curr_odd->next == NULL) {
+			curr_even->next = NULL;
+			curr_odd->next = first_even;
+			break;
+		}
+
+		curr_even->next = curr_odd->next;
+		curr_even = curr_odd->next;
+
 	}
 
 }
@@ -76,7 +94,7 @@ int main() {
 		pushNode(head1, val);
 	}
 
-	removeDuplicates(head1);
+	oddEvenList(head1);
 
 	printList(head1);
 
