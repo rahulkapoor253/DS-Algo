@@ -91,6 +91,9 @@ int main() {
 	// for writing output to output.txt
 	freopen("output.txt", "w", stdout);
 
+//TEST CASE:
+// 	9
+// 3 2 1 5 6 3 2 4 2
 	int n;
 	cin >> n;
 
