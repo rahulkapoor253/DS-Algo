@@ -44,6 +44,10 @@ int binarySearchIterative(int arr[], int start, int end, int key) {
 	return -1;//not able to find the key
 }
 
+bool cmpFunction(int x, int y) {
+	return x < y;
+}
+
 int main() {
 // for getting input from input.txt
 	freopen("input.txt", "r", stdin);
@@ -65,6 +69,10 @@ int main() {
 	cout << ind1 << endl;
 
 	int ind2 = binarySearchIterative(arr, 0, n - 1, key);
-	cout << ind1 << endl;
+	cout << ind2 << endl;
+
+	int isFound = binary_search(arr + 0, arr + n, key, cmpFunction);
+	cout << isFound << endl;
 
 }
+
