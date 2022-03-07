@@ -14,7 +14,7 @@ int computePivoting(int arr[], int left, int right, int pivot_index) {
 	int i = left;
 	int j = left;
 
-	for (int i = left; i < right; i++) {
+	for (i = left; i < right; i++) {
 
 		if (arr[i] <= arr[pivot_index]) {
 			swap(arr[i], arr[j]);
@@ -26,7 +26,7 @@ int computePivoting(int arr[], int left, int right, int pivot_index) {
 	//swap both j and pivot_index
 	swap(arr[j], arr[pivot_index]);
 
-	return pivot_index;
+	return j;
 }
 
 int computeKthlargestQuickSelect(int arr[], int n, int key) {
